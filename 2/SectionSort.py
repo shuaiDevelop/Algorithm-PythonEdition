@@ -8,7 +8,7 @@
 @file: SectionSort.py
 @time: 2018-03-01 14:26
 """
-
+import time
 
 class Student:
 
@@ -42,13 +42,22 @@ def selection_sort(arr):
 
         arr[i], arr[min_index] = arr[min_index], arr[i]
 
-    print(arr)
+    return arr
 
 
 if __name__ == '__main__':
-    selection_sort([3, 4, 6, 1, 2, 6, 8, 9, 0, 5])
-    selection_sort(['2', '1', 'a', 'b', 'c', '7'])
-    selection_sort([Student('A', 100), Student('D', 10), Student('F', 88), Student('B', 88)])
+    print(selection_sort([3, 4, 6, 1, 2, 6, 8, 9, 0, 5]))
+    print(selection_sort(['2', '1', 'a', 'b', 'c', '7']))
+    print(selection_sort([Student('A', 100), Student('D', 10), Student('F', 88), Student('B', 88)]))
+
+    # # 通过测试  10000个数的数组 通过选择排序 花费的时间 大概是 2.717s  100000个数花费时间大概是  273.217s
+    # #  大致可以得出  选择排序的时间复杂度 是 n^2 级别的  所消耗的时间和数据之间成平方的关系  数据量增大10倍 处理时间增大100倍
+    # arr = list(range(10000))
+    # start_time = time.clock()
+    # selection_sort(arr)
+    # end_time = time.clock()
+    # print(end_time - start_time)
+
 
 
 
